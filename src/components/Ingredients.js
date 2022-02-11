@@ -4,16 +4,16 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { IngredientsContext } from "../App";
 
 export default function Ingredients(props) {
-  const { handleIngredientsDelete } = useContext(IngredientsContext);
+  const { handleIngredientsDelete, handleIngredientsSelect } = useContext(IngredientsContext);
   const { name, quantity, id } = props;
   return (
     <>
       <Container>
         <Row>
           <Col sm={4}>{name}</Col>
-          <Col sm={6}>Quanyity: {quantity}</Col>
+          <Col sm={6}>Quantity: {quantity}</Col>
           <Col sm={2}>
-            <Button variant="primary">Edit</Button>
+            <Button variant="primary" onClick={() => handleIngredientsSelect(id)}>Edit</Button>
             <Button variant="danger" onClick={() => handleIngredientsDelete(id)}>Delete</Button>
           </Col>
         </Row>

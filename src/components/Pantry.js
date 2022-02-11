@@ -9,9 +9,9 @@ export default function Pantry({ingredient}) {
   return (
     <div>
       <div>
-        {ingredient.map((ingredient) => {
+        {ingredient.map((ingredients) => {
           return (
-          <Ingredients key={ingredient.id} {...ingredient} />
+          <Ingredients key={ingredients.id} {...ingredients} />
           )
         })}
       </div>
