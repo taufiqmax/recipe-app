@@ -6,7 +6,7 @@ import { RecipesContext } from "../RecipeApp";
 export default function Recipes(props) {
   const { handleRecipesDelete, handleRecipesSelect } =
     useContext(RecipesContext);
-  const { name, quantity, id } = props;
+  const { name, quantity, method, ingredients, id } = props;
   return (
     <>
       <Card style={{ width: "18rem" }}>
@@ -14,10 +14,10 @@ export default function Recipes(props) {
           <Card.Title>{name}</Card.Title>
         </Card.Body>
         <ListGroup className="list-group-flush">
-          <ListGroupItem>{quantity}</ListGroupItem>
+          <ListGroupItem>Ingredients: {ingredients}</ListGroupItem>
         </ListGroup>
         <Card.Body>
-          <Card.Text>Method</Card.Text>
+          <Card.Text>Method: {method}</Card.Text>
           <Button variant="primary" onClick={() => handleRecipesSelect(id)}>
             Edit
           </Button>

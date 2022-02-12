@@ -26,13 +26,23 @@ export default function RecipeEdit({ recipes }) {
                 />
               </Form.Group>
               <Form.Group className="mb-3">
-                <Form.Label>Quantity</Form.Label>
+                <Form.Label>Ingredients</Form.Label>
                 <Form.Control
-                  placeholder="Enter Quantity"
-                  type="number"
-                  id="quantity"
-                  value={recipes.quantity}
-                  onChange={(e) => handleChange({ quantity: parseInt(e.target.value) || '' })}
+                  placeholder="Enter Ingredients"
+                  type="text"
+                  id="ingredients"
+                  value={recipes.ingredients}
+                  onChange={(e) => handleChange({ ingredients: e.target.value })}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Method</Form.Label>
+                <Form.Control
+                  placeholder="Enter Method"
+                  type="text"
+                  id="method"
+                  value={recipes.method}
+                  onChange={(e) => handleChange({ method: e.target.value })}
                 />
               </Form.Group>
               <Button variant="primary" onClick={() => handleRecipesSelect(undefined)}>

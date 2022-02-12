@@ -12,12 +12,14 @@ function RecipeApp() {
     {
       id: 1,
       name: "Chicken",
-      quantity: 2,
+      ingredients: "ggg",
+      method: "Test"
     },
     {
       id: 2,
       name: "Banana",
-      quantity: 3,
+      ingredients: "ggg",
+      method: "Test"
     },
   ];
   const [selectedRecipesId, setSelectedRecipesId] = useState();
@@ -49,7 +51,8 @@ function RecipeApp() {
     const newRecipe = {
       id: uuidv4(),
       name: "",
-      quantity: 1,
+      ingredients: "",
+      method: ""
     };
 
     setSelectedRecipesId(newRecipe.id);
